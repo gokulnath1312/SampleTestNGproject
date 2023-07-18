@@ -31,7 +31,7 @@ public class GooglePageTest {
 			searchText.submit();
 			Assert.assertEquals(driver.getTitle(), "Java Tutorial - Google Search");
 	 }
-  @Test(alwaysRun=true, dependsOnMethods = "appiumSearchText")
+  @Test(alwaysRun=true, dependsOnMethods = "appiumSearchTest")
   public void gitSearchTest() {
 
 		WebDriver driver=new ChromeDriver();
