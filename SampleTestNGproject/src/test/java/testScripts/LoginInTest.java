@@ -10,6 +10,9 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.omg.PortableInterceptor.USER_EXCEPTION;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByCssSelector;
@@ -57,7 +60,7 @@ public class LoginInTest {
 	 public void validLogin(String username, String password){	 
 		 
 		 driver.get(prop.getProperty("url"));
-		 driver.findElement(By.cssSelector("#username")).sendKeys(username);
+		 driver.findElement(By.cssSelector(readFromExcel("userNme"))).sendKeys(username);
 		 driver.findElement(By.id("password")).sendKeys(password);
 		 driver.findElement(By.xpath("//button[@class='radius']")).submit();
 		 boolean isValidUser=driver.findElement(By.cssSelector("div.flash.success")).isDisplayed();
@@ -77,7 +80,39 @@ public class LoginInTest {
 		 }
 		 return dataList.toArray(new Object[dataList.size()][]);
 			 
+		 } 
+	 
+	 public String readFromExcel (String objName)
+	 {
+		 String objPath="";
+		 String path3=System.getProperty("user.dir")+"//src//test//resources//dataFiles//loginData.xlsx";
+		 FileInputStream fin;
+		 //XSSF->.xlsx
+		 //HSSf->.xls
+		 
+		 XSSFWorkbook workbook=null;
+		 try {
+			 fin =new FileInputStream(path3);
+			 workbook=new XSSFWorkbook(fin);
+			 
+		 } catch (FileNotFoundException e) {
+			 e.printStackTrace();
+		 } catch (IOException e) {
+			 e.printStackTrace();
 		 }
+		 
+		 XSSFSheet loginSheet=workbook.getSheet("loginPage");
+		 int rowNum=loginSheet.getLastRowNum();
+		 for (int i=1;i<=rowNum;i++) {
+			 XSSFRow row=loginSheet.getRow(i);
+			 if(row.getCell(0).getStringCellValue().equalsIgnoreCase(objName)) {
+				 objPath=row.getCell(1).getStringCellValue();
+			 }
+		 }
+		 return objPath;
+	 }
+	 
+	 
 	 
 	 @AfterMethod
 	 public void teardown()

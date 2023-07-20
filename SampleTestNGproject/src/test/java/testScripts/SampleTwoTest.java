@@ -14,7 +14,7 @@ import org.testng.asserts.SoftAssert;
 public class SampleTwoTest {
 	WebDriver driver;
 	@Parameters("browser")
-	@BeforeTest
+//	@BeforeTest
 	public void setup(String strbrowser) {
 		if (strbrowser.equalsIgnoreCase("Chrome"))
 		{
@@ -27,8 +27,9 @@ public class SampleTwoTest {
 		 
 	}
 	
-	@Test
+	@Test(retryAnalyzer = RetryTest.class)
 	  public void CypressSearchTest() {
+		 driver=new ChromeDriver();
 		  driver.get("https://www.google.com");
 		WebElement searchText=driver.findElement(By.name("q"));
 		SoftAssert softassert=new SoftAssert();
@@ -36,7 +37,7 @@ public class SampleTwoTest {
 		searchText.sendKeys("Cypress");
 		searchText.submit();
 		
-		Assert.assertEquals(driver.getTitle(), "Cypress - Google Search");
+		Assert.assertEquals(driver.getTitle(), "Cypress - Google page Search");
 	softassert.assertAll();
 	driver.close();
 }
