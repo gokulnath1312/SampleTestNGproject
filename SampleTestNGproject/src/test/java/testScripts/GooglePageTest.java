@@ -1,11 +1,17 @@
 package testScripts;
 
 import java.time.Duration;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -28,16 +34,21 @@ public class GooglePageTest {
 		// @BeforeMethod
 		
 		 @BeforeMethod
-		 public void setup() {
+		 public void setup() throws MalformedURLException {
 			 extentReport=new ExtentReports();
 			sparkReport=new ExtentSparkReporter("test-output/SparkReport.html");
 			extentReport.attachReporter(sparkReport);
+			ChromeOptions options=new ChromeOptions();
+			options.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
+			String strHub="";
+			driver=new RemoteWebDriver(new URL(strHub),options);
 			 driver=new ChromeDriver();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		 }
 		 
 		 @Test
 		  public void javaSearchTest() {
+			
 			 extentTest = extentReport.createTest("Java Tutorial");
 			driver.get("https://www.google.com");
 			WebElement searchText=driver.findElement(By.name("q"));

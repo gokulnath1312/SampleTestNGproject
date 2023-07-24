@@ -1,53 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="159" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
+  <suite name="Default suite" duration-ms="10353" started-at="2023-07-21T01:02:15 CDT" finished-at="2023-07-21T01:02:25 CDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="159" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-      <class name="parallelScripts.SampleOneTest">
-        <test-method status="PASS" signature="testOne()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testOne" duration-ms="16" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
+    <test name="Default test" duration-ms="10353" started-at="2023-07-21T01:02:15 CDT" finished-at="2023-07-21T01:02:25 CDT">
+      <class name="testScripts.CdpDevtools">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testScripts.CdpDevtools@544a2ea6]" name="setup" is-config="true" duration-ms="5684" started-at="2023-07-21T01:02:15 CDT" finished-at="2023-07-21T01:02:20 CDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testOne -->
-        <test-method status="PASS" signature="testThree()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testThree" duration-ms="2" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="basicAuthTest()[pri:0, instance:testScripts.CdpDevtools@544a2ea6]" name="basicAuthTest" duration-ms="4557" started-at="2023-07-21T01:02:20 CDT" finished-at="2023-07-21T01:02:25 CDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testThree -->
-        <test-method status="PASS" signature="testTwo()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testTwo" duration-ms="9" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwo -->
-        <test-method status="PASS" signature="testTwo()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testTwo" duration-ms="9" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwo -->
-        <test-method status="PASS" signature="testTwo()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testTwo" duration-ms="8" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwo -->
-        <test-method status="PASS" signature="testTwo()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testTwo" duration-ms="2" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwo -->
-        <test-method status="PASS" signature="testTwo()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testTwo" duration-ms="12" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwo -->
-        <test-method status="PASS" signature="testTwo()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testTwo" duration-ms="9" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwo -->
-        <test-method status="PASS" signature="testTwo()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testTwo" duration-ms="10" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwo -->
-        <test-method status="PASS" signature="testTwo()[pri:0, instance:parallelScripts.SampleOneTest@27f723]" name="testTwo" duration-ms="4" started-at="2023-07-18T02:54:41 CDT" finished-at="2023-07-18T02:54:41 CDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testTwo -->
-      </class> <!-- parallelScripts.SampleOneTest -->
+        </test-method> <!-- basicAuthTest -->
+      </class> <!-- testScripts.CdpDevtools -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
